@@ -1,0 +1,20 @@
+.DS_Store
+*.cph
+*.bin
+*.yml
+*.dylib
+*.dSYM
+*.o
+*.exec
+Test
+Lab1/Task
+Lab2/Main
+Lab2/SingleList
+Lab2/Task3
+*[^.]+
+Lab2/Full Code/main
+check/queue
+Lab3/Main
+Lab3/Task2
+Lab3/Task3
+Lab4/Lab4
