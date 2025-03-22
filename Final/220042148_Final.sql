@@ -45,9 +45,18 @@ JOIN pokemon p ON o.pokemon_id = p.pokemon_id
 group by t.name
 having Combat_Rating = (
 	SELECT MAX(Combat_Rating) 
-    from pokemmon
+    from pokemon
     );
 
+SELECT CONCAT(t.first_name , ' ', t.last_name) as Full_name, p.name, p.type,  (hp * 0.8 + attack * 1.2 + defense * 1.0 + speed * 1.5) AS Combat_Rating
+FROM trainer t
+JOIN owner o ON t.trainer_id = o.trainer_id
+JOIN pokemon p ON o.pokemon_id = p.pokemon_id
+group by Full_name
+having Combat_Rating = (
+	SELECT MAX(Combat_Rating) 
+    from pokemon
+    );
 
 -- 8
 DELIMITER //
@@ -77,7 +86,7 @@ END//
 
 DELIMITER ;
 
-CALL evolve_pokemon11(1, 'Bubasaur', 10);
+CALL evolve_pokemon11(1, 'Bulbasaur', 10);
     
 
 
